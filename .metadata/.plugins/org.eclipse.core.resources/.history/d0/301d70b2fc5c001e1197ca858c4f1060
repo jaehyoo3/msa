@@ -1,0 +1,5 @@
+package com.msa.sample.domain;
+
+public class User {
+
+}

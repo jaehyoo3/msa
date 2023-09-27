@@ -1,0 +1,22 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: apigateway-service
+  cloud:
+    gateway:
+      routes:
+      - id: first-service
+        uri: http://localhost:7777/
+        predicates:
+        - Path=/first-service/**
+        filters:
+            - AddRequestHeader=first-request, first-requests-header1
+            - AddResponseHeader=first-response, first-response-header1
+      - id: second-service
+        uri : http://localhost:7778/
+        predicates:
+          - Path=/second-service/**
+        filters:
+          - AddRequestHeader=second-request, second-requests-header2
+          - AddResponseHeader=second-response, second-response-header2

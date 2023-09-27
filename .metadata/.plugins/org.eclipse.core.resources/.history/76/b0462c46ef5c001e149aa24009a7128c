@@ -1,0 +1,5 @@
+package com.msa.sample.service;
+
+public class CustomerApiService {
+
+}

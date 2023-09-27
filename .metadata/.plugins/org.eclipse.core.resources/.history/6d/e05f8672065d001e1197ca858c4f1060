@@ -1,0 +1,28 @@
+package com.msa.sample.service;
+
+import org.springframework.stereotype.Service;
+
+import com.msa.sample.domain.User;
+import com.msa.sample.repository.UserRepository;
+import com.msa.sample.service.dto.UserReq;
+
+@Service
+public class UserService {
+
+	private final UserRepository userRepository;
+	
+    public UserService(UserRepository userRepository) {
+		this.userRepository = userRepository;
+    }
+    
+    public void userSave(UserReq userReq) {
+    	User user = User.builder()
+    			.email(userReq.getEmail())
+    			.encryptedPwd(userReq.getEncryptedPwd())
+    			.userId(userReq.getEmail())
+    			.name(userReq.getName())
+    			.build();
+    	
+    	userRepository.save(user);
+    }
+}

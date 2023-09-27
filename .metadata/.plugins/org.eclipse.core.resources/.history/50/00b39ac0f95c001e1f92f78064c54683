@@ -1,0 +1,13 @@
+package com.msa.sample;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CustormersApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CustormersApplication.class, args);
+	}
+
+}

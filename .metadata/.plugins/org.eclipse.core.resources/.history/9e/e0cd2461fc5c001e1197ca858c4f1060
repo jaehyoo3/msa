@@ -1,0 +1,6 @@
+package com.msa.sample.web;
+@RestController
+@RequestMapping("/")
+public class UserController {
+
+}

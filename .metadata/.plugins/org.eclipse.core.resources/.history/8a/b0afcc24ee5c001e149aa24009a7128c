@@ -1,0 +1,5 @@
+package com.msa.sample.web;
+
+public class CatalogsController {
+
+}
