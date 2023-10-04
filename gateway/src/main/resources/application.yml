@@ -27,8 +27,8 @@ spring:
         filters:
             - AddRequestHeader=first-request, first-requests-header1
             - AddResponseHeader=first-response, first-response-header1
-      - id: custorm-service
-        uri : lb://custorm-service
+      - id: order-service
+        uri : lb://order-service
         predicates:
           - Path=/custorm/**
         filters:
