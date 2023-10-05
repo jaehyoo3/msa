@@ -1,15 +1,13 @@
 package com.msa.sample.domain;
 
-import lombok.Builder;
-import lombok.Data;
-
+import lombok.*;
 import java.time.LocalDate;
-
 import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "users")
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,6 +34,5 @@ public class User {
     	this.userId = userId;
     	this.encryptedPwd = encryptedPwd;
     	this.createDate = LocalDate.now();
-
-	}
+	}    
 }

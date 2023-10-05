@@ -20,20 +20,14 @@ spring:
           preLogger: true
           postLogger: true
       routes:
-      - id: catalogs-service
-        uri: lb://catalogs-service
+      - id: catalog-service
+        uri: lb://catalog-service
         predicates:
-        - Path=/catalogs/**
-        filters:
-            - AddRequestHeader=first-request, first-requests-header1
-            - AddResponseHeader=first-response, first-response-header1
+        - Path=/catalog/**
       - id: order-service
         uri : lb://order-service
         predicates:
-          - Path=/custorm/**
-        filters:
-          - AddRequestHeader=second-request, second-requests-header2
-          - AddResponseHeader=second-response, second-response-header2
+        - Path=/order/**
       - id: user-service
         uri: lb://user-service
         predicates:
